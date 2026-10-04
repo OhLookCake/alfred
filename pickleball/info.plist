@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>local.ee.pickleballtv</string>
+	<key>connections</key>
+	<dict>
+		<key>videos</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>browser</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>ee</string>
+	<key>description</key>
+	<string>Browse the 10 latest Pickleballtv uploads</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Pickleballtv</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>pb</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Loading the latest Pickleballtv uploads…</string>
+				<key>script</key>
+				<string>exec /usr/bin/python3 videos.py</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Browse the newest 10 uploads</string>
+				<key>title</key>
+				<string>Latest Pickleballtv videos</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>videos</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>exec /usr/bin/open "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>browser</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string># Pickleballtv for Alfred
+
+Double-click `Pickleballtv.alfredworkflow` to import it into Alfred. Requires Alfred with Powerpack and `/usr/bin/python3` (available on this Mac).
+
+Type `pb ` to fetch the ten newest uploads from https://www.youtube.com/@Pickleballtv/videos. Use ↑/↓ to select a video, then press Return or activate the result with the mouse to open it in your default browser. Uploads stay in newest-first order. Titles and the available upload age/view count appear in the list.
+
+No API key, login, or additional packages are needed. Each invocation fetches the current Videos page; an internet connection is required. If YouTube blocks the request or changes its page structure, the workflow offers to open the channel instead.
+
+Build: `/usr/bin/python3 build.py` from this directory. Tests: `/usr/bin/python3 -m unittest discover -s tests -v`.
+</string>
+	<key>uidata</key>
+	<dict>
+		<key>browser</key>
+		<dict>
+			<key>xpos</key>
+			<integer>360</integer>
+			<key>ypos</key>
+			<integer>100</integer>
+		</dict>
+		<key>videos</key>
+		<dict>
+			<key>xpos</key>
+			<integer>100</integer>
+			<key>ypos</key>
+			<integer>100</integer>
+		</dict>
+	</dict>
+	<key>version</key>
+	<string>1.0.0</string>
+</dict>
+</plist>
